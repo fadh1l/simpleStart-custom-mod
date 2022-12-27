@@ -1,6 +1,6 @@
 :root {
-    --main-fg: #c9b183;
-    -second-fg: #4e5236;
+    --main-fg: #9e97ad;
+    -second-fg: #304b78;
 }
 
 body, html {
@@ -16,7 +16,7 @@ body, html {
 }
 
 .bg-image {
-    background-image: url(./images/image.jpg);
+    background-image: url(./images/image2.jpg);
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -53,7 +53,7 @@ body, html {
 }
 
 #month::first-letter {
-    color: #4e5236;
+    color: #304b78;
 }
 
 .line {
@@ -61,7 +61,7 @@ body, html {
     margin-left: auto;
     margin-right: auto;
     width: 200px;
-    background-color: #dbcb9e;
+    background-color: #9e97ad; 
     height: 5px;
 }
 
@@ -79,11 +79,11 @@ body, html {
     font-weight: 800;
 }
 .name {
-    color: #c6d37d;
+    color: #eb3f35; 
 }
 
 #hour {
-    color: #c9b183;
+    color: #9e97ad;
 } #min {
-    color: #4e5236;
+    color: #304b78;
 }

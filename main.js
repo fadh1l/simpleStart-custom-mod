@@ -2,7 +2,7 @@ function getId(a){
     return document.getElementById(a)
 }
 
-async function time() 
+async function time()
 {
     numToWord = ["ZERO","ONE","TWO","THREE","FOUR","FIVE","SIX","SEVEN","EIGHT","NINE","TEN","ELEVEN","TWELVE","THIRTEEN","FOURTEEN","FIFTEEN","SIXTEEN","SEVENTEEN","EIGHTEEN","NINETEEN","TWENTY","TWENTY ONE","TWENTY TWO","TWENTY THREE","TWENTY FOUR","TWENTY FIVE","TWENTY SIX","TWENTY SEVEN","TWENTY EIGHT","TWENTY NINE","THIRTY","THIRTY ONE","THIRTY TWO","THIRTY THREE","THIRTY FOUR","THIRTY FIVE","THIRTY SIX","THIRTY SEVEN","THIRTY EIGHT","THIRTY NINE","FORTY","FORTY ONE","FORTY TWO","FORTY THREE","FORTY FOUR","FORTY FIVE","FORTY SIX","FORTY SEVEN","FORTY EIGHT","FORTY NINE","FIFTY","FIFTY ONE","FIFTY TWO","FIFTY THREE","FIFTY FOUR","FIFTY FIVE","FIFTY SIX","FIFTY SEVEN","FIFTY EIGHT","FIFTY NINE"]
     while (true){
@@ -15,7 +15,7 @@ async function time()
     }
 }
 
-function delay(time) 
+function delay(time)
 {
     return new Promise(resolve => setTimeout(resolve, time));
 }
@@ -45,7 +45,7 @@ function date()
 {
     const today = new Date();
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    
+
     let day = today.getUTCDate();
     let month = months[today.getMonth()];
     getId("month").innerHTML = month.toUpperCase();
@@ -56,7 +56,7 @@ function date()
 function welcomeMessage() {
     var today = new Date();
     var h = today.getHours() + 1;
-    var userName = "USERNAME";
+    var userName = "Fadhil";
     var message = String();
     if (h <= 12 && h >= 6){
         message = "Good Morning, ";
@@ -65,7 +65,7 @@ function welcomeMessage() {
     } else if (h > 21 || (h < 6 && h > 12)) {
         message = "Go to sleep, "
     } else {
-        message = "Hello, ";
+        message = "Welcome back, ";
     }
     message = message + "<span class='name'>" + userName +"</span>";
     document.getElementById("welcome").innerHTML = message;
@@ -73,11 +73,11 @@ function welcomeMessage() {
 
 function weatherBalloon( cityID ) {
     var key = '4d8fb5b93d4af21d66a2948710284366';
-    fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)  
+    fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)
     .then(function(resp) { return resp.json() })
     .then(function(data) {
         let celcius = Math.round(parseFloat(data.main.temp)-273.15);
-        getId("weather").innerHTML = "Todays weather in " + data.name + " is " + data.weather[0].description + " with a temp of " + celcius + "&deg C"; 
+        getId("weather").innerHTML = "Todays weather in " + data.name + " is " + data.weather[0].description + " with a temp of " + celcius + "&deg C";
     });
 }
 
@@ -85,5 +85,5 @@ function main(){
     time();
     date();
     welcomeMessage()
-    weatherBalloon(YOUR ID HERE)
+    weatherBalloon(1263694)
 }
